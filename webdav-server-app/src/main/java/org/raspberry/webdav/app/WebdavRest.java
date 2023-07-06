@@ -56,10 +56,25 @@ public class WebdavRest {
 	public void doMkCol(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		webdavService.doMkCol(request, response);
 	}
-	
+
+	@RequestMapping(path = "/**", method = RequestMethod.LOCK)
+	public void doLock(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		webdavService.doLock(request, response);
+	}
+
+	@RequestMapping(path = "/**", method = RequestMethod.UNLOCK)
+	public void doUnlock(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		webdavService.doUnlock(request, response);
+	}
+
 	@RequestMapping(path = "/**", method = RequestMethod.PROPFIND)
 	public void doPropFind(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		webdavService.doPropFind(request, response);
 	}
-	
+
+	@RequestMapping(path = "/**", method = RequestMethod.PROPPATCH)
+	public void doPropPatch(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		webdavService.doPropPatch(request, response);
+	}
+
 }
